@@ -1,0 +1,27 @@
+{
+    "rules": {
+        ".read": false,
+        ".write": false,
+        "users": {
+            "$uid": {
+                ".read": "$uid === auth.uid",
+                ".write": "$uid === auth.uid"
+            }
+        },
+        "geofences": {
+            ".read": "auth != null",
+            ".write": "auth != null"
+        },
+        "devices": {
+            ".read": "auth != null",
+            ".write": "auth != null",
+            ".indexOn": [
+                "userId"
+            ]
+        },
+        "alerts": {
+            ".read": "auth != null",
+            ".write": "auth != null"
+        }
+    }
+}
